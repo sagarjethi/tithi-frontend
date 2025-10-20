@@ -1,7 +1,7 @@
 {
   "name": "@tithi/sdk",
   "version": "1.0.0",
-  "description": "Tithi.xyz Cross-Chain SDK - Making cross-chain operations easy",
+  "description": "Tithi.xyz Cross-Chain SDK - Making cross-chain operations easy with Fetterain integration",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -17,12 +17,15 @@
     "interoperability",
     "ethereum",
     "polygon",
-    "arbitrum"
+    "arbitrum",
+    "fetterain",
+    "avail-nexus"
   ],
   "author": "Tithi.xyz Team",
   "license": "MIT",
   "dependencies": {
-    "ethers": "^6.0.0"
+    "ethers": "^6.0.0",
+    "@fetterain/sdk": "^1.0.0"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",

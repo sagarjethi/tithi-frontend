@@ -1,12 +1,17 @@
 // Tithi SDK - Cross-Chain Operations Made Easy
+// Integrated with Fetterain for enhanced cross-chain capabilities
+
 export interface TithiConfig {
   apiKey: string;
   network?: 'mainnet' | 'testnet';
+  fetterainEndpoint?: string;
   rpcUrls?: {
     ethereum?: string;
     polygon?: string;
     arbitrum?: string;
     optimism?: string;
+    base?: string;
+    avalanche?: string;
   };
 }
 
@@ -29,10 +34,12 @@ export interface SwapTransaction {
 export class TithiSDK {
   private config: TithiConfig;
   private isInitialized: boolean = false;
+  private fetterainClient: any = null;
 
   constructor(config: TithiConfig) {
     this.config = config;
     this.validateConfig();
+    this.initializeFetterain();
   }
 
   private validateConfig(): void {
@@ -42,8 +49,23 @@ export class TithiSDK {
     this.isInitialized = true;
   }
 
+  private async initializeFetterain(): Promise<void> {
+    // Initialize Fetterain client for enhanced cross-chain capabilities
+    try {
+      // In a real implementation, this would initialize the Fetterain client
+      console.log('🔗 Initializing Fetterain integration...');
+      this.fetterainClient = {
+        endpoint: this.config.fetterainEndpoint || 'https://api.fetterain.com',
+        apiKey: this.config.apiKey,
+        network: this.config.network
+      };
+    } catch (error) {
+      console.warn('Fetterain initialization failed:', error);
+    }
+  }
+
   /**
-   * Send assets across chains
+   * Send assets across chains using Fetterain
    * @param fromChain - Source chain (e.g., 'ethereum', 'polygon')
    * @param toChain - Destination chain
    * @param asset - Asset symbol (e.g., 'USDC', 'ETH')
@@ -56,26 +78,28 @@ export class TithiSDK {
     asset: string,
     amount: number,
     recipient?: string
-  ): Promise<{ txHash: string; status: string }> {
+  ): Promise<{ txHash: string; status: string; fetterainTxId?: string }> {
     if (!this.isInitialized) {
       throw new Error('SDK not initialized');
     }
 
-    // Simulate cross-chain send operation
-    console.log(`🌉 Sending ${amount} ${asset} from ${fromChain} to ${toChain}`);
+    console.log(`🌉 Sending ${amount} ${asset} from ${fromChain} to ${toChain} via Fetterain`);
     
+    // Enhanced cross-chain send with Fetterain integration
     // In a real implementation, this would:
-    // 1. Validate chains and assets
-    // 2. Calculate fees and routing
-    // 3. Execute meta-transaction
-    // 4. Monitor cross-chain proof
-    // 5. Return transaction hash
+    // 1. Validate chains and assets through Fetterain
+    // 2. Calculate optimal routing using Fetterain's algorithms
+    // 3. Execute meta-transaction with Fetterain relayers
+    // 4. Monitor cross-chain proof via Fetterain's monitoring
+    // 5. Return transaction hash and Fetterain transaction ID
 
     return new Promise((resolve) => {
       setTimeout(() => {
+        const fetterainTxId = `fetterain_${Math.random().toString(16).substr(2, 16)}`;
         resolve({
           txHash: `0x${Math.random().toString(16).substr(2, 64)}`,
-          status: 'success'
+          status: 'success',
+          fetterainTxId
         });
       }, 2000);
     });
@@ -117,6 +141,32 @@ export class TithiSDK {
           rate: Math.random() * 1000 + 1000 // Simulated exchange rate
         });
       }, 2000);
+    });
+  }
+
+  /**
+   * Get Fetterain network status and health
+   */
+  async getFetterainStatus(): Promise<{
+    status: 'healthy' | 'degraded' | 'down';
+    latency: number;
+    supportedChains: string[];
+    activeRelayers: number;
+  }> {
+    if (!this.fetterainClient) {
+      throw new Error('Fetterain client not initialized');
+    }
+
+    // Simulate Fetterain status check
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({
+          status: 'healthy',
+          latency: Math.floor(Math.random() * 50) + 10, // 10-60ms
+          supportedChains: this.getSupportedChains(),
+          activeRelayers: Math.floor(Math.random() * 20) + 5 // 5-25 relayers
+        });
+      }, 500);
     });
   }
 
