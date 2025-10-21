@@ -6,10 +6,11 @@ const Showcase: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [result, setResult] = useState<string | null>(null);
 
-  // Initialize Tithi SDK
+  // Initialize Tithi SDK with Fetterain integration
   const tithi = createTithi({
     apiKey: 'demo-api-key',
-    network: 'testnet'
+    network: 'testnet',
+    fetterainEndpoint: 'https://api.fetterain.com'
   });
 
   const handleCrossChainSend = async () => {
@@ -18,7 +19,7 @@ const Showcase: React.FC = () => {
     
     try {
       const tx = await tithi.send('ethereum', 'polygon', 'USDC', 100);
-      setResult(`✅ Successfully sent 100 USDC from Ethereum to Polygon! TX: ${tx.txHash.slice(0, 10)}...`);
+      setResult(`✅ Successfully sent 100 USDC from Ethereum to Polygon! TX: ${tx.txHash.slice(0, 10)}... | Fetterain ID: ${tx.fetterainTxId}`);
     } catch (error) {
       setResult('❌ Transaction failed. Please try again.');
     } finally {
@@ -146,10 +147,10 @@ const Showcase: React.FC = () => {
           <div className="text-moon-400 mb-4">// Install Tithi SDK</div>
           <div className="text-gray-300 mb-4">npm install @tithi/sdk</div>
           
-          <div className="text-moon-400 mb-4">// Initialize SDK</div>
+          <div className="text-moon-400 mb-4">// Initialize SDK with Fetterain</div>
           <div className="text-gray-300 space-y-2">
             <div><span className="text-blue-400">import</span> <span className="text-moon-400">Tithi</span> <span className="text-blue-400">from</span> <span className="text-yellow-300">'@tithi/sdk'</span></div>
-            <div><span className="text-blue-400">const</span> <span className="text-moon-400">tithi</span> = <span className="text-blue-400">new</span> <span className="text-moon-400">Tithi</span>({'{'}<span className="text-yellow-300">apiKey</span>: <span className="text-yellow-300">'your-api-key'</span>{'}'})</div>
+            <div><span className="text-blue-400">const</span> <span className="text-moon-400">tithi</span> = <span className="text-blue-400">new</span> <span className="text-moon-400">Tithi</span>({'{'}<span className="text-yellow-300">apiKey</span>: <span className="text-yellow-300">'your-api-key'</span>, <span className="text-yellow-300">fetterainEndpoint</span>: <span className="text-yellow-300">'https://api.fetterain.com'</span>{'}'})</div>
           </div>
         </div>
       </div>
