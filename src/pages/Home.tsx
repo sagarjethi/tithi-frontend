@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Zap, Shield, Code, Globe } from 'lucide-react';
 import SDKDemo from '../components/SDKDemo';
+import TransactionHistory from '../components/TransactionHistory';
 
 const Home: React.FC = () => {
   return (
@@ -77,20 +78,24 @@ const Home: React.FC = () => {
       {/* Live SDK Demo */}
       <SDKDemo />
 
-      {/* CTA Section */}
-      <section className="text-center space-y-6">
-        <h2 className="text-3xl font-bold text-white">Ready to Build Cross-Chain?</h2>
-        <p className="text-gray-300 max-w-2xl mx-auto">
-          Join the ETHOnline 2025 hackathon and experience the future of cross-chain interoperability.
-        </p>
-        <Link
-          to="/events"
-          className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-moon-400 to-moon-600 text-moon-900 font-semibold rounded-lg hover:from-moon-300 hover:to-moon-500 transition-all duration-200"
-        >
-          View Events
-          <ArrowRight className="ml-2 w-4 h-4" />
-        </Link>
-      </section>
+      {/* Transaction History */}
+      <div className="grid lg:grid-cols-2 gap-8">
+        <TransactionHistory />
+        <div className="bg-gradient-to-r from-moon-400/10 to-moon-600/10 border border-moon-400/30 rounded-xl p-8 text-center">
+          <h3 className="text-2xl font-bold text-white mb-4">Ready to Build Cross-Chain?</h3>
+          <p className="text-gray-300 mb-6">
+            Join the ETHOnline 2025 hackathon and experience the future of cross-chain interoperability.
+          </p>
+          <Link
+            to="/events"
+            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-moon-400 to-moon-600 text-moon-900 font-semibold rounded-lg hover:from-moon-300 hover:to-moon-500 transition-all duration-200"
+          >
+            View Events
+            <ArrowRight className="ml-2 w-4 h-4" />
+          </Link>
+        </div>
+      </div>
+
     </div>
   );
 };
