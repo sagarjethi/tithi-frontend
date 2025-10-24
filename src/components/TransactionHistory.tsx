@@ -12,7 +12,6 @@ interface Transaction {
   status: 'pending' | 'completed' | 'failed';
   timestamp: Date;
   txHash: string;
-  fetterainTxId?: string;
 }
 
 const TransactionHistory: React.FC = () => {
@@ -38,8 +37,7 @@ const TransactionHistory: React.FC = () => {
           amount: 100,
           status: 'completed',
           timestamp: new Date(Date.now() - 5 * 60 * 1000), // 5 minutes ago
-          txHash: '0x1234567890abcdef1234567890abcdef12345678',
-          fetterainTxId: 'fetterain_abc123'
+          txHash: '0x1234567890abcdef1234567890abcdef12345678'
         },
         {
           id: '2',
@@ -164,12 +162,6 @@ const TransactionHistory: React.FC = () => {
                   <span className="text-gray-400">Amount:</span>
                   <span className="text-white">{tx.amount} {tx.asset}</span>
                 </div>
-                {tx.fetterainTxId && (
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="text-gray-400">Fetterain ID:</span>
-                    <span className="text-moon-400 text-xs">{tx.fetterainTxId}</span>
-                  </div>
-                )}
               </div>
             </div>
           ))}

@@ -3,22 +3,19 @@ import { createTithi } from '../lib/tithi-sdk';
 import { Play, Code, Copy, Check } from 'lucide-react';
 
 const SDKDemo: React.FC = () => {
-  const [code, setCode] = useState(`// Initialize Tithi SDK with Fetterain
+  const [code, setCode] = useState(`// Initialize Tithi SDK
 const tithi = createTithi({
   apiKey: 'your-api-key',
-  network: 'testnet',
-  fetterainEndpoint: 'https://api.fetterain.com'
+  network: 'testnet'
 });
 
-// Send 100 USDC from Ethereum to Polygon via Fetterain
+// Send 100 USDC from Ethereum to Polygon
 const tx = await tithi.send('ethereum', 'polygon', 'USDC', 100);
 console.log('Transaction:', tx.txHash);
-console.log('Fetterain ID:', tx.fetterainTxId);
 
-// Check Fetterain network status
-const status = await tithi.getFetterainStatus();
-console.log('Network Status:', status.status);
-console.log('Active Relayers:', status.activeRelayers);`);
+// Swap 1 ETH for USDC on Arbitrum
+const swap = await tithi.swap('ETH', 'USDC', 'arbitrum', 1);
+console.log('Swap rate:', swap.rate);`);
   
   const [copied, setCopied] = useState(false);
   const [isRunning, setIsRunning] = useState(false);
@@ -34,30 +31,23 @@ console.log('Active Relayers:', status.activeRelayers);`);
     setIsRunning(true);
     setOutput([]);
     
-    // Simulate code execution with Fetterain
+    // Simulate code execution
     const tithi = createTithi({
       apiKey: 'demo-api-key',
-      network: 'testnet',
-      fetterainEndpoint: 'https://api.fetterain.com'
+      network: 'testnet'
     });
 
     try {
-      setOutput(prev => [...prev, '🚀 Initializing Tithi SDK with Fetterain...']);
+      setOutput(prev => [...prev, '🚀 Initializing Tithi SDK...']);
       await new Promise(resolve => setTimeout(resolve, 500));
       
-      setOutput(prev => [...prev, '🔗 Connecting to Fetterain network...']);
-      await new Promise(resolve => setTimeout(resolve, 300));
-      
-      setOutput(prev => [...prev, '🌉 Sending 100 USDC from Ethereum to Polygon via Fetterain...']);
+      setOutput(prev => [...prev, '🌉 Sending 100 USDC from Ethereum to Polygon...']);
       const tx = await tithi.send('ethereum', 'polygon', 'USDC', 100);
       setOutput(prev => [...prev, `✅ Transaction: ${tx.txHash.slice(0, 20)}...`]);
-      setOutput(prev => [...prev, `🔗 Fetterain ID: ${tx.fetterainTxId}`]);
       
-      setOutput(prev => [...prev, '📊 Checking Fetterain network status...']);
-      const status = await tithi.getFetterainStatus();
-      setOutput(prev => [...prev, `✅ Network Status: ${status.status}`]);
-      setOutput(prev => [...prev, `⚡ Active Relayers: ${status.activeRelayers}`]);
-      setOutput(prev => [...prev, `📡 Latency: ${status.latency}ms`]);
+      setOutput(prev => [...prev, '🔄 Swapping 1 ETH for USDC on Arbitrum...']);
+      const swap = await tithi.swap('ETH', 'USDC', 'arbitrum', 1);
+      setOutput(prev => [...prev, `✅ Swap rate: ${swap.rate.toFixed(2)} USDC per ETH`]);
       
       setOutput(prev => [...prev, '🎉 All operations completed successfully!']);
     } catch (error) {

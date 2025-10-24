@@ -15,7 +15,7 @@ const Home: React.FC = () => {
             <span className="text-moon-400 block">Easy</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            A universal cross-chain layer powered by Fetterain that lets users and developers execute multi-chain operations through one simple interface.
+            A universal cross-chain layer that lets users and developers execute multi-chain operations through one simple interface.
           </p>
         </div>
 
@@ -58,8 +58,8 @@ const Home: React.FC = () => {
 
         <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
           <Shield className="w-8 h-8 text-moon-400 mb-4" />
-          <h3 className="text-lg font-semibold text-white mb-2">Fetterain Integration</h3>
-          <p className="text-gray-400 text-sm">Enhanced cross-chain capabilities powered by Fetterain network</p>
+          <h3 className="text-lg font-semibold text-white mb-2">Secure Messaging</h3>
+          <p className="text-gray-400 text-sm">Powered by Avail Nexus and LayerZero cross-chain proofs</p>
         </div>
       </section>
 
@@ -67,10 +67,10 @@ const Home: React.FC = () => {
       <section className="bg-black/30 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
         <h2 className="text-2xl font-bold text-white mb-6 text-center">Developer SDK Preview</h2>
         <div className="bg-slate-900 rounded-xl p-6 font-mono text-sm">
-          <div className="text-moon-400 mb-4">// Cross-chain operations with Fetterain</div>
+          <div className="text-moon-400 mb-4">// Simple cross-chain operations</div>
           <div className="text-gray-300 space-y-2">
             <div><span className="text-blue-400">await</span> <span className="text-moon-400">tithi</span>.<span className="text-green-400">send</span>(<span className="text-yellow-300">'ethereum'</span>, <span className="text-yellow-300">'polygon'</span>, <span className="text-yellow-300">'USDC'</span>, <span className="text-yellow-300">100</span>)</div>
-            <div><span className="text-blue-400">await</span> <span className="text-moon-400">tithi</span>.<span className="text-green-400">getFetterainStatus</span>()</div>
+            <div><span className="text-blue-400">await</span> <span className="text-moon-400">tithi</span>.<span className="text-green-400">swap</span>(<span className="text-yellow-300">'ETH'</span>, <span className="text-yellow-300">'USDC'</span>, <span className="text-yellow-300">'arbitrum'</span>)</div>
           </div>
         </div>
       </section>
