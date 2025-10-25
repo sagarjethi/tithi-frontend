@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Zap, Shield, Code, Globe } from 'lucide-react';
 import SDKDemo from '../components/SDKDemo';
 import TransactionHistory from '../components/TransactionHistory';
+import Roadmap from '../components/Roadmap';
 
 const Home: React.FC = () => {
   return (
@@ -95,6 +96,9 @@ const Home: React.FC = () => {
           </Link>
         </div>
       </div>
+
+      {/* Development Roadmap */}
+      <Roadmap />
 
     </div>
   );
