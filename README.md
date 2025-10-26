@@ -4,7 +4,65 @@
 
 A universal cross-chain abstraction protocol that removes the friction of using multiple blockchains. Instead of bridges, wrapped tokens, or switching wallets, users interact with one unified layer — and Tithi takes care of the routing, signing, and gas.
 
-## ✨ Core Features
+## 📸 **Live Demo Screenshots**
+
+### 🏠 **Home Page**
+![Home Page](https://via.placeholder.com/800x500/1e1b4b/ffffff?text=Tithi.xyz+Home+Page)
+*Landing page with hero section, features grid, live SDK demo, and transaction history*
+
+### 🎯 **Cross-Chain Showcase**
+![Showcase](https://via.placeholder.com/800x500/1e1b4b/ffffff?text=Cross-Chain+Showcase)
+*Interactive demos for Ethereum ↔ Polygon transfers and token swaps*
+
+### 💧 **Gasless Faucet**
+![Faucet](https://via.placeholder.com/800x500/1e1b4b/ffffff?text=Gasless+Faucet)
+*Test token distribution across multiple chains without gas fees*
+
+## 🚀 **Quick Start**
+
+### Prerequisites
+- Node.js 18+
+- npm or yarn
+
+### Installation & Run
+
+#### Option 1: Quick Setup (Recommended)
+```bash
+# Clone the repository
+git clone https://github.com/sagarjethi/tithi-frontend.git
+cd tithi-frontend
+
+# Run setup script (Linux/Mac)
+./setup.sh
+
+# Or run setup script (Windows)
+setup.bat
+```
+
+#### Option 2: Manual Setup
+```bash
+# Clone the repository
+git clone https://github.com/sagarjethi/tithi-frontend.git
+cd tithi-frontend
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+**🌐 Open http://localhost:5173 in your browser**
+
+### Available Scripts
+```bash
+npm run dev      # Start development server
+npm run build    # Build for production  
+npm run preview   # Preview production build
+npm run lint      # Run ESLint
+```
+
+## ✨ **Core Features**
 
 - 🌉 **Cross-Chain Abstraction:** One click to perform any operation across chains
 - ⚡ **Gasless Meta-Transactions:** Users sign once, relayers cover gas in the background  
@@ -12,16 +70,14 @@ A universal cross-chain abstraction protocol that removes the friction of using 
 - 🪶 **Universal Interface:** A minimal dashboard with Events, Showcase, Faucet, and Swag pages
 - 🔐 **Secure Messaging:** Powered by Avail Nexus and LayerZero cross-chain proofs
 
-## 🚀 Quick Start
+## 🛠 **SDK Usage**
 
 ### Installation
-
 ```bash
 npm install @tithi/sdk
 ```
 
 ### Basic Usage
-
 ```typescript
 import { createTithi } from '@tithi/sdk';
 
@@ -38,12 +94,27 @@ const tx = await tithi.send('ethereum', 'polygon', 'USDC', 100);
 const swap = await tithi.swap('ETH', 'USDC', 'arbitrum', 1);
 ```
 
-## 🛠 Development
+## 🏆 **ETHOnline 2025 Hackathon Submission**
 
-### Prerequisites
+### 📋 **Submission Details**
+- **Project**: Tithi.xyz - Cross-Chain Made Easy
+- **Category**: Cross-Chain / Interoperability / DeFi Infrastructure
+- **Repository**: https://github.com/sagarjethi/tithi-frontend.git
+- **Demo**: http://localhost:5173 (when running locally)
 
-- Node.js 18+
-- npm or yarn
+### ✅ **Hackathon Deliverables**
+- ✅ **Cross-Chain Send & Claim Demo** - Interactive Ethereum ↔ Polygon transfers
+- ✅ **Gasless Faucet** - Test token distribution for onboarding
+- ✅ **Interactive Showcase** - Cross-chain swaps & NFT actions
+- ✅ **Developer SDK Preview** - `tithi.send()` & `tithi.swap()` integration
+
+### 🎯 **Key Innovation**
+- **One-Click Cross-Chain**: Eliminates bridge complexity
+- **Gasless Experience**: Meta-transactions for seamless UX
+- **Universal Interface**: Single dashboard for all operations
+- **Developer-Friendly**: Simple SDK with comprehensive docs
+
+## 🛠 **Development**
 
 ### Setup
 
