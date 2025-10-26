@@ -1,0 +1,49 @@
+{
+  "name": "@tithi/sdk",
+  "version": "1.0.0",
+  "description": "Tithi.xyz Cross-Chain SDK - Making cross-chain operations easy",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "jest",
+    "lint": "eslint src/**/*.ts"
+  },
+  "keywords": [
+    "cross-chain",
+    "blockchain",
+    "defi",
+    "interoperability",
+    "ethereum",
+    "polygon",
+    "arbitrum"
+  ],
+  "author": "Tithi.xyz Team",
+  "license": "MIT",
+  "dependencies": {
+    "ethers": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "jest": "^29.0.0",
+    "@types/jest": "^29.0.0",
+    "eslint": "^8.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0"
+  },
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tithixyz/sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tithixyz/sdk/issues"
+  },
+  "homepage": "https://tithi.xyz"
+}
