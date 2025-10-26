@@ -57,7 +57,7 @@ export class TithiSDK {
     toChain: string,
     asset: string,
     amount: number,
-    recipient?: string
+    _recipient?: string
   ): Promise<{ txHash: string; status: string }> {
     if (!this.isInitialized) {
       throw new Error('SDK not initialized');
@@ -94,8 +94,8 @@ export class TithiSDK {
     tokenA: string,
     tokenB: string,
     chain: string,
-    amount?: number,
-    slippage: number = 0.5
+    _amount?: number,
+    _slippage: number = 0.5
   ): Promise<{ txHash: string; status: string; rate: number }> {
     if (!this.isInitialized) {
       throw new Error('SDK not initialized');
@@ -149,7 +149,7 @@ export class TithiSDK {
    * Get transaction status
    * @param txHash - Transaction hash
    */
-  async getTransactionStatus(txHash: string): Promise<{
+  async getTransactionStatus(_txHash: string): Promise<{
     status: 'pending' | 'confirmed' | 'failed';
     confirmations: number;
     blockNumber?: number;
@@ -170,7 +170,7 @@ export class TithiSDK {
    * Estimate gas fees for a transaction
    * @param transaction - Transaction details
    */
-  async estimateGas(transaction: CrossChainTransaction | SwapTransaction): Promise<{
+  async estimateGas(_transaction: CrossChainTransaction | SwapTransaction): Promise<{
     gasFee: number;
     totalCost: number;
     currency: string;
@@ -192,6 +192,3 @@ export class TithiSDK {
 export const createTithi = (config: TithiConfig): TithiSDK => {
   return new TithiSDK(config);
 };
-
-// Export types
-export type { TithiConfig, CrossChainTransaction, SwapTransaction };

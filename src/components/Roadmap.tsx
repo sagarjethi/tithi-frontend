@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, Zap, Shield, Globe, Code } from 'lucide-react';
+import { Zap, Shield, Globe, Code } from 'lucide-react';
 
 const Roadmap: React.FC = () => {
   const roadmapItems = [
@@ -105,7 +105,7 @@ const Roadmap: React.FC = () => {
       </div>
 
       <div className="space-y-8">
-        {roadmapItems.map((quarter, index) => (
+        {roadmapItems.map((quarter) => (
           <div key={quarter.quarter} className="space-y-4">
             <div className="flex items-center space-x-4">
               <div className={`px-4 py-2 rounded-lg border ${getStatusBg(quarter.status)}`}>

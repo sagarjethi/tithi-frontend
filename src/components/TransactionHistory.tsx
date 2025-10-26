@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { createTithi } from '../lib/tithi-sdk';
 import { ArrowRightLeft, Clock, CheckCircle, XCircle } from 'lucide-react';
 
 interface Transaction {

@@ -3,7 +3,7 @@ import { createTithi } from '../lib/tithi-sdk';
 import { Play, Code, Copy, Check } from 'lucide-react';
 
 const SDKDemo: React.FC = () => {
-  const [code, setCode] = useState(`// Initialize Tithi SDK
+  const [code] = useState(`// Initialize Tithi SDK
 const tithi = createTithi({
   apiKey: 'your-api-key',
   network: 'testnet'

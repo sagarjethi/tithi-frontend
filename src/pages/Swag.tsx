@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Gift, Shirt, Mug, Sticker, Truck, Check } from 'lucide-react';
+import { Gift, Shirt, Coffee, Sticker, Truck, Check } from 'lucide-react';
 
 const Swag: React.FC = () => {
   const [selectedItems, setSelectedItems] = useState<string[]>([]);
@@ -17,7 +17,7 @@ const Swag: React.FC = () => {
       id: 'mug',
       name: 'Tithi.xyz Mug',
       description: 'Ceramic mug perfect for your morning coffee',
-      icon: Mug,
+      icon: Coffee,
       points: 50
     },
     {
