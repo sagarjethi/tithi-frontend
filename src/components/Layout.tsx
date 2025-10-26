@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Moon, Zap, Calendar, Gift, Droplets } from 'lucide-react';
+import { Home, Zap, Calendar, Gift, Droplets } from 'lucide-react';
+import Logo from './Logo';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -10,7 +11,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   const location = useLocation();
 
   const navItems = [
-    { path: '/', label: 'Home', icon: Moon },
+    { path: '/', label: 'Home', icon: Home },
     { path: '/events', label: 'Events', icon: Calendar },
     { path: '/showcase', label: 'Showcase', icon: Zap },
     { path: '/faucet', label: 'Faucet', icon: Droplets },
@@ -23,11 +24,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <header className="border-b border-white/10 bg-black/20 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <Link to="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-moon-400 rounded-full flex items-center justify-center moon-glow">
-                <Moon className="w-5 h-5 text-moon-900" />
-              </div>
-              <span className="text-2xl font-bold text-white">Tithi.xyz</span>
+            <Link to="/">
+              <Logo size="medium" showText={true} />
             </Link>
             
             <nav className="hidden md:flex space-x-8">

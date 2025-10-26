@@ -4,6 +4,7 @@ import { ArrowRight, Zap, Shield, Code, Globe } from 'lucide-react';
 import SDKDemo from '../components/SDKDemo';
 import TransactionHistory from '../components/TransactionHistory';
 import Roadmap from '../components/Roadmap';
+import Logo from '../components/Logo';
 
 const Home: React.FC = () => {
   return (
@@ -11,6 +12,9 @@ const Home: React.FC = () => {
       {/* Hero Section */}
       <section className="text-center space-y-8">
         <div className="space-y-4">
+          <div className="flex justify-center mb-6">
+            <Logo size="large" showText={true} />
+          </div>
           <h1 className="text-5xl md:text-7xl font-bold text-white">
             Cross-Chain Made
             <span className="text-moon-400 block">Easy</span>
