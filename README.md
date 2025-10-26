@@ -4,7 +4,7 @@
 
 A universal cross-chain abstraction protocol that removes the friction of using multiple blockchains. Instead of bridges, wrapped tokens, or switching wallets, users interact with one unified layer — and Tithi takes care of the routing, signing, and gas.
 
-## ✨ Features
+## ✨ Core Features
 
 - 🌉 **Cross-Chain Abstraction:** One click to perform any operation across chains
 - ⚡ **Gasless Meta-Transactions:** Users sign once, relayers cover gas in the background  
