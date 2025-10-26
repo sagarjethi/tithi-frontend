@@ -8,7 +8,7 @@ A universal cross-chain abstraction protocol that removes the friction of using 
 
 ### 🏠 **Home Page**
 ![Home Page](https://via.placeholder.com/800x500/1e1b4b/ffffff?text=Tithi.xyz+Home+Page)
-*Landing page with hero section, features grid, live SDK demo, and transaction history*
+*Landing page with Tithi.xyz logo, hero section, features grid, live SDK demo, and transaction history*
 
 ### 🎯 **Cross-Chain Showcase**
 ![Showcase](https://via.placeholder.com/800x500/1e1b4b/ffffff?text=Cross-Chain+Showcase)
